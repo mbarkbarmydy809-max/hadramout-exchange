@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/Eyebrow"
+        android:text="@string/brand_eyebrow" />
+
+    <TextView
+        style="@style/PageTitle"
+        android:text="@string/home_title" />
+
+    <TextView
+        android:id="@+id/home_mode"
+        style="@style/StatusPill"
+        android:layout_marginTop="8dp"
+        android:text="@string/demo_mode" />
+
+    <LinearLayout
+        style="@style/GoldCard"
+        android:layout_marginTop="22dp"
+        android:orientation="vertical">
+        <TextView style="@style/CardLabel" android:text="@string/available_balance" />
+        <TextView
+            android:id="@+id/home_balance"
+            style="@style/BalanceText"
+            android:layout_marginTop="10dp"
+            android:text="1,250,000" />
+        <TextView style="@style/CardLabel" android:layout_marginTop="2dp" android:text="@string/currency_riyal" />
+    </LinearLayout>
+
+    <TextView style="@style/SectionTitle" android:layout_marginTop="26dp" android:text="@string/quick_actions" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/home_deposit_button"
+            style="@style/PrimaryButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/deposit" />
+        <Button
+            android:id="@+id/home_withdraw_button"
+            style="@style/SecondaryButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/withdrawal" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/DarkCard" android:layout_marginTop="18dp" android:orientation="vertical">
+        <TextView style="@style/CardLabel" android:text="@string/platform_promise" />
+        <TextView style="@style/BodyText" android:layout_marginTop="8dp" android:text="@string/platform_promise_body" />
+        <Button
+            android:id="@+id/home_transactions_button"
+            style="@style/TextButton"
+            android:layout_gravity="start"
+            android:layout_marginTop="8dp"
+            android:text="@string/view_transactions" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/home_admin_button"
+        style="@style/SecondaryButton"
+        android:layout_marginTop="18dp"
+        android:text="@string/open_admin_dashboard" />
+</LinearLayout>

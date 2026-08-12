@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.HadramoutExchange" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">@color/gold_primary</item>
+        <item name="android:navigationBarColor">@color/navy_background</item>
+        <item name="android:statusBarColor">@color/navy_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="Eyebrow" parent="android:style/Widget.TextView">
+        <item name="android:textColor">@color/gold_primary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="PageTitle" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="SectionTitle" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="BodyText" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+    <style name="CardLabel" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+    <style name="CardTitle" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="MetaText" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="AmountText" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/gold_primary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="BalanceText" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/navy_background</item>
+        <item name="android:textSize">34sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="StatusPill" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/status_pill</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/gold_primary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="GoldCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/gold_card</item>
+        <item name="android:padding">@dimen/card_padding</item>
+    </style>
+    <style name="DarkCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/dark_card</item>
+        <item name="android:padding">@dimen/card_padding</item>
+    </style>
+    <style name="PrimaryButton" parent="android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:background">@drawable/primary_button</item>
+        <item name="android:textColor">@color/navy_background</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="SecondaryButton" parent="android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:background">@drawable/secondary_button</item>
+        <item name="android:textColor">@color/gold_primary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="TextButton" parent="android:style/Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/gold_primary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="BottomNavButton" parent="android:style/Widget.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/nav_button</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:padding">2dp</item>
+    </style>
+    <style name="AmountInput" parent="android:style/Widget.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@drawable/input_field</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+</resources>

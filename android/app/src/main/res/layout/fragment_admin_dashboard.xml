@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView style="@style/Eyebrow" android:text="@string/brand_eyebrow" />
+    <TextView style="@style/PageTitle" android:text="@string/admin_title" />
+    <TextView style="@style/BodyText" android:layout_marginTop="8dp" android:text="@string/admin_body" />
+    <LinearLayout style="@style/GoldCard" android:layout_marginTop="22dp" android:orientation="vertical">
+        <TextView style="@style/CardLabel" android:text="@string/total_transactions" />
+        <TextView android:id="@+id/admin_total_transactions" style="@style/BalanceText" android:layout_marginTop="8dp" android:text="3" />
+        <TextView android:id="@+id/admin_last_sync" style="@style/CardLabel" android:layout_marginTop="4dp" android:text="@string/sync_ready" />
+    </LinearLayout>
+    <Button android:id="@+id/admin_refresh" style="@style/PrimaryButton" android:layout_marginTop="18dp" android:text="@string/refresh_dashboard" />
+    <Button android:id="@+id/admin_back" style="@style/TextButton" android:layout_gravity="start" android:layout_marginTop="8dp" android:text="@string/back_home" />
+</LinearLayout>

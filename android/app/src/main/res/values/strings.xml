@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">منصة حضرموت للتبادل</string>
+    <string name="brand_eyebrow">HADRAMOUT EXCHANGE</string>
+    <string name="home_title">محفظتك، بوضوح وثقة</string>
+    <string name="available_balance">الرصيد المتاح</string>
+    <string name="currency_riyal">ريال يمني</string>
+    <string name="quick_actions">إجراءات سريعة</string>
+    <string name="deposit">إيداع</string>
+    <string name="withdrawal">سحب</string>
+    <string name="platform_promise">منصة التبادل المحلية</string>
+    <string name="platform_promise_body">تابع طلباتك المالية، راجع العمليات الأخيرة، وتواصل مع فريق الإدارة من مكان واحد.</string>
+    <string name="view_transactions">عرض كل العمليات</string>
+    <string name="open_admin_dashboard">لوحة الإدارة</string>
+    <string name="demo_mode">وضع العرض المحلي</string>
+    <string name="live_mode">متصل بقاعدة البيانات</string>
+    <string name="deposit_title">طلب إيداع</string>
+    <string name="deposit_body">أدخل المبلغ الذي تريد إيداعه وسيراجعه فريق المنصة.</string>
+    <string name="withdrawal_title">طلب سحب</string>
+    <string name="withdrawal_body">قدّم طلب سحب وسنرسل لك حالة المراجعة فوراً.</string>
+    <string name="amount_label">المبلغ</string>
+    <string name="amount_hint">مثال: 250000</string>
+    <string name="method_label">طريقة الاستلام</string>
+    <string name="method_cash">نقداً من مكتب حضرموت للتبادل</string>
+    <string name="account_label">رقم الحساب أو الهاتف</string>
+    <string name="account_hint">أدخل الرقم</string>
+    <string name="submit_request">إرسال الطلب</string>
+    <string name="back_home">العودة للرئيسية</string>
+    <string name="transactions_title">العمليات الأخيرة</string>
+    <string name="transactions_body">سجل واضح لكل طلبات الإيداع والسحب والتحويل.</string>
+    <string name="admin_title">لوحة الإدارة</string>
+    <string name="admin_body">نظرة سريعة على نشاط المنصة وطلبات العملاء.</string>
+    <string name="total_transactions">إجمالي العمليات المسجلة</string>
+    <string name="sync_ready">آخر مزامنة: وضع العرض المحلي</string>
+    <string name="synced_now">آخر مزامنة: الآن</string>
+    <string name="refresh_dashboard">تحديث اللوحة</string>
+    <string name="required_amount">أدخل المبلغ</string>
+    <string name="request_sent">تم تسجيل الطلب بنجاح</string>
+    <string name="dashboard_updated">تم تحديث لوحة الإدارة</string>
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_deposit">إيداع</string>
+    <string name="nav_withdrawal">سحب</string>
+    <string name="nav_transactions">العمليات</string>
+    <string name="nav_admin">الإدارة</string>
+</resources>

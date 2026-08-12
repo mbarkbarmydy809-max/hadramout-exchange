@@ -1,0 +1,9 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "b8K0j_gVP3yI5BCmfC2_7"
+uri = "file://android/app/build/outputs/apk/release/app-release.apk"
+type = "unspecified"
+title = "Hadramout Exchange Platform — Android APK"
+description = "Installable release build, version 1.0.0. This APK is signed with a temporary development certificate and runs in local demo mode using placeholder Supabase values."

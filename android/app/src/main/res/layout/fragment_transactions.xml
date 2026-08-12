@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView style="@style/Eyebrow" android:text="@string/brand_eyebrow" />
+    <TextView style="@style/PageTitle" android:text="@string/transactions_title" />
+    <TextView style="@style/BodyText" android:layout_marginTop="8dp" android:text="@string/transactions_body" />
+    <LinearLayout
+        android:id="@+id/transactions_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="vertical" />
+    <Button android:id="@+id/transactions_back" style="@style/TextButton" android:layout_gravity="start" android:layout_marginTop="8dp" android:text="@string/back_home" />
+</LinearLayout>

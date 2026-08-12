@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView style="@style/Eyebrow" android:text="@string/brand_eyebrow" />
+    <TextView style="@style/PageTitle" android:text="@string/withdrawal_title" />
+    <TextView style="@style/BodyText" android:layout_marginTop="8dp" android:text="@string/withdrawal_body" />
+    <LinearLayout style="@style/DarkCard" android:layout_marginTop="22dp" android:orientation="vertical">
+        <TextView style="@style/CardLabel" android:text="@string/amount_label" />
+        <EditText
+            android:id="@+id/withdrawal_amount"
+            style="@style/AmountInput"
+            android:hint="@string/amount_hint"
+            android:inputType="numberDecimal" />
+        <TextView style="@style/CardLabel" android:layout_marginTop="16dp" android:text="@string/account_label" />
+        <EditText
+            style="@style/AmountInput"
+            android:hint="@string/account_hint"
+            android:inputType="phone" />
+        <Button
+            android:id="@+id/withdrawal_submit"
+            style="@style/PrimaryButton"
+            android:layout_marginTop="20dp"
+            android:text="@string/submit_request" />
+    </LinearLayout>
+    <Button android:id="@+id/withdrawal_back" style="@style/TextButton" android:layout_gravity="start" android:layout_marginTop="8dp" android:text="@string/back_home" />
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy_background">#0A0F1D</color>
+    <color name="navy_surface">#111A2B</color>
+    <color name="navy_card">#172238</color>
+    <color name="gold_primary">#E5B869</color>
+    <color name="gold_soft">#3A2E1B</color>
+    <color name="text_primary">#F9F4E8</color>
+    <color name="text_secondary">#A8B2C2</color>
+    <color name="green_success">#8BD6A8</color>
+    <color name="line_color">#29364D</color>
+</resources>

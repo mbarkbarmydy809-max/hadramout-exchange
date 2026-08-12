@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navy_background"
+    android:layoutDirection="rtl">
+
+    <FrameLayout
+        android:id="@+id/screen_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/screen_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/page_padding" />
+        </ScrollView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="@color/navy_surface"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+
+        <Button
+            android:id="@+id/nav_home"
+            style="@style/BottomNavButton"
+            android:text="@string/nav_home" />
+        <Button
+            android:id="@+id/nav_deposit"
+            style="@style/BottomNavButton"
+            android:text="@string/nav_deposit" />
+        <Button
+            android:id="@+id/nav_withdrawal"
+            style="@style/BottomNavButton"
+            android:text="@string/nav_withdrawal" />
+        <Button
+            android:id="@+id/nav_transactions"
+            style="@style/BottomNavButton"
+            android:text="@string/nav_transactions" />
+        <Button
+            android:id="@+id/nav_admin"
+            style="@style/BottomNavButton"
+            android:text="@string/nav_admin" />
+    </LinearLayout>
+</LinearLayout>
