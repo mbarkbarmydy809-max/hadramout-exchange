@@ -25,25 +25,30 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        npm install -g pnpm @capacitor/cli @capacitor/core
+        npm install -g pnpm
         pnpm install --no-frozen-lockfile
 
-    - name: Prepare Web Assets
+    - name: Build Web Application
       run: |
-        pnpm run build || npm run build || true
+        # بناء الويب للمشروع الأساسي
+        pnpm build || npm run build || npx vite build
 
-        INDEX_PATH=$(find . -name "index.html" -not -path "*/node_modules/*" -not -path "*/android/*" | head -n 1)
-        
-        mkdir -p dist
-        if [ -n "$INDEX_PATH" ]; then
-          BUILD_DIR=$(dirname "$INDEX_PATH")
-          cp -r "$BUILD_DIR"/* dist/
+    - name: Inject Web Assets to Android Assets
+      run: |
+        # إنشاء المجلد المباشر للأندرويد
+        mkdir -p android/app/src/main/assets/public
+
+        # البحث عن المجلد المجمع (dist أو build) ونسخ محتوياته
+        if [ -d "dist" ]; then
+          cp -r dist/* android/app/src/main/assets/public/
+        elif [ -d "build" ]; then
+          cp -r build/* android/app/src/main/assets/public/
         fi
 
-        mkdir -p android/app/src/main/assets/public
-        cp -r dist/* android/app/src/main/assets/public/
+        # طباعة المحتويات للتحقق
+        ls -la android/app/src/main/assets/public/
 
-    - name: Setup Gradle Wrapper & Build Debug APK
+    - name: Setup Gradle Wrapper & Build APK
       run: |
         cd android
         gradle wrapper
