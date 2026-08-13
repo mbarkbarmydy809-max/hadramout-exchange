@@ -37,23 +37,22 @@ jobs:
         mkdir -p dist
         if [ -n "$INDEX_PATH" ]; then
           BUILD_DIR=$(dirname "$INDEX_PATH")
-          echo "Found build dir at: $BUILD_DIR"
           cp -r "$BUILD_DIR"/* dist/
         fi
 
         mkdir -p android/app/src/main/assets/public
         cp -r dist/* android/app/src/main/assets/public/
 
-    - name: Setup Gradle Wrapper & Build APK
+    - name: Setup Gradle Wrapper & Build Debug APK
       run: |
         cd android
         gradle wrapper
         chmod +x gradlew
-        ./gradlew assembleRelease
+        ./gradlew assembleDebug --stacktrace
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: app-release
-        path: '**/build/outputs/apk/release/*.apk'
+        path: '**/build/outputs/apk/**/*.apk'
         
