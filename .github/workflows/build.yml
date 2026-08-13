@@ -1,4 +1,4 @@
-name: Publish Android APK
+name: Build Android APK
 
 on:
   push:
@@ -12,9 +12,40 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Install Dependencies
+      run: |
+        npm install -g pnpm
+        pnpm install
+
+    - name: Build Web App
+      run: pnpm build || npm run build || true
+
+    - name: Sync Capacitor (If applicable)
+      run: |
+        npx cap sync android || true
+
+    - name: Build Android APK
+      run: |
+        if [ -d "android" ]; then
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleRelease
+        fi
+
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: app-release
-        path: 'public/app.apk'
+        path: '**/build/outputs/apk/release/*.apk'
         
