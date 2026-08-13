@@ -31,16 +31,23 @@ jobs:
     - name: Build Web App
       run: pnpm build || npm run build || true
 
-    - name: Sync Capacitor (If applicable)
+    - name: Sync Capacitor
       run: |
+        npx cap add android || true
         npx cap sync android || true
 
     - name: Build Android APK
       run: |
-        if [ -d "android" ]; then
-          cd android
+        GRADLE_DIR=$(dirname $(find . -name "gradlew" -not -path "*/.*" | head -n 1))
+        if [ -n "$GRADLE_DIR" ]; then
+          echo "Found gradlew in $GRADLE_DIR"
+          cd "$GRADLE_DIR"
           chmod +x gradlew
           ./gradlew assembleRelease
+        else
+          echo "No gradlew found, building with gradle directly..."
+          cd android
+          gradle assembleRelease
         fi
 
     - name: Upload APK
