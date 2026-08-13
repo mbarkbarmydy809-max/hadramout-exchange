@@ -24,14 +24,23 @@ jobs:
         flutter-version: '3.19.x'
         channel: 'stable'
 
-    - name: Build Flutter App
+    - name: Find and Build
       run: |
-        PUBSPEC_PATH=$(find . -name "pubspec.yaml" -not -path "*/.*" | head -n 1)
-        PROJECT_DIR=$(dirname "$PUBSPEC_PATH")
-        echo "Found project at: $PROJECT_DIR"
-        cd "$PROJECT_DIR"
-        flutter pub get
-        flutter build apk --release
+        echo "=== Directory List ==="
+        find . -maxdepth 3 -not -path '*/.*'
+        
+        TARGET_DIR=$(dirname $(find . -name "pubspec.yaml" -not -path '*/.*' | head -n 1))
+        
+        if [ -z "$TARGET_DIR" ] || [ "$TARGET_DIR" = "." ]; then
+          echo "Building from root..."
+          flutter pub get
+          flutter build apk --release
+        else
+          echo "Found project in: $TARGET_DIR"
+          cd "$TARGET_DIR"
+          flutter pub get
+          flutter build apk --release
+        fi
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
