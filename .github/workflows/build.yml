@@ -30,10 +30,8 @@ jobs:
 
     - name: Prepare Web Assets
       run: |
-        # تشغيل عملية البناء
         pnpm run build || npm run build || true
 
-        # البحث عن ملف index.html المجمع ونقل المحتويات
         INDEX_PATH=$(find . -name "index.html" -not -path "*/node_modules/*" -not -path "*/android/*" | head -n 1)
         
         mkdir -p dist
@@ -43,13 +41,13 @@ jobs:
           cp -r "$BUILD_DIR"/* dist/
         fi
 
-        # النسخ المباشر لملفات الويب إلى مشروع الأندرويد
         mkdir -p android/app/src/main/assets/public
         cp -r dist/* android/app/src/main/assets/public/
 
-    - name: Build Android APK
+    - name: Setup Gradle Wrapper & Build APK
       run: |
         cd android
+        gradle wrapper
         chmod +x gradlew
         ./gradlew assembleRelease
 
@@ -58,4 +56,4 @@ jobs:
       with:
         name: app-release
         path: '**/build/outputs/apk/release/*.apk'
-       
+        
