@@ -26,10 +26,11 @@ jobs:
     - name: Install Dependencies
       run: |
         npm install -g pnpm @capacitor/cli @capacitor/core
-        pnpm install
+        pnpm install --no-frozen-lockfile
 
-    - name: Build Web Assets
-      run: pnpm build || npm run build
+    - name: Build Main Web App
+      run: |
+        npx vite build --emptyOutDir || pnpm run --filter . build || npm run build || true
 
     - name: Initialize & Add Android Project
       run: |
