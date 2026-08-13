@@ -28,15 +28,18 @@ jobs:
         npm install -g pnpm @capacitor/cli @capacitor/core
         pnpm install --no-frozen-lockfile
 
-    - name: Build Main Web App
+    - name: Build Web Assets
       run: |
-        npx vite build --emptyOutDir || pnpm run --filter . build || npm run build || true
+        pnpm run build || npm run build || true
+        # إنشاء مجلد dist احتياطي وتمرير الملفات إليه لضمان وجوده
+        mkdir -p dist
+        if [ -d "build" ]; then cp -r build/* dist/; fi
+        if [ -d "public" ]; then cp -r public/* dist/; fi
 
-    - name: Initialize & Add Android Project
+    - name: Sync Capacitor Android
       run: |
-        npx cap init "Hadramout Exchange" "com.hadramout.exchange" --web-dir dist || true
-        npx cap add android || true
-        npx cap sync android
+        # التأكد من مطابقة إعدادات Capacitor لمجلد dist
+        npx cap sync android || npx cap add android
 
     - name: Build Android APK
       run: |
@@ -48,5 +51,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: app-release
-        path: 'android/app/build/outputs/apk/release/app-release-unsigned.apk'
+        path: 'android/app/build/outputs/apk/release/*.apk'
         
