@@ -25,13 +25,26 @@ jobs:
         channel: 'stable'
 
     - name: Get Dependencies
-      run: flutter pub get
+      run: |
+        if [ -f "pubspec.yaml" ]; then
+          flutter pub get
+        else
+          cd $(dirname $(find . -maxdepth 2 -name "pubspec.yaml" | head -n 1))
+          flutter pub get
+        fi
 
     - name: Build APK
-      run: flutter build apk --release
+      run: |
+        if [ -f "pubspec.yaml" ]; then
+          flutter build apk --release
+        else
+          cd $(dirname $(find . -maxdepth 2 -name "pubspec.yaml" | head -n 1))
+          flutter build apk --release
+        fi
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: app-release
-        path: build/app/outputs/flutter-apk/app-release.apk
+        path: '**/build/app/outputs/flutter-apk/app-release.apk'
+        
